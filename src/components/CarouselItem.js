@@ -12,6 +12,7 @@ export default class CarouselItem extends Component {
     width: PropTypes.number,
     index: PropTypes.number,
     currentSlideIndex: PropTypes.number,
+    slidesPerPage: PropTypes.number,
   };
   render() {
     return (
@@ -20,7 +21,10 @@ export default class CarouselItem extends Component {
           'BrainhubCarouselItem',
           {
             'BrainhubCarouselItem--clickable': this.props.clickable,
-            'BrainhubCarouselItem--active': this.props.index === this.props.currentSlideIndex,
+            'BrainhubCarouselItem--center': this.props.index === this.props.currentSlideIndex,
+            'BrainhubCarouselItem--active':
+            this.props.index >= (this.props.currentSlideIndex - this.props.slidesPerPage/2)
+            && this.props.index <= (this.props.currentSlideIndex + this.props.slidesPerPage/2),
           }
         )}
         style={{

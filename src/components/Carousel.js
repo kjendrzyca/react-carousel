@@ -473,6 +473,7 @@ export default class Carousel extends Component {
               onMouseDown={this.onMouseDown(index)}
               onTouchStart={this.onTouchStart(index)}
               clickable={this.getProp('clickToChange')}
+              slidesPerPage={this.getProp('slidesPerPage')}
             >
               {carouselItem}
             </CarouselItem>
